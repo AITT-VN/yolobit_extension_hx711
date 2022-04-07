@@ -1,0 +1,15 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category id="hx711_loadcell" name="HX_711_LOADCELL" colour="#FBC041" icon="cloud">
+    <block type="hx711_loadcell_create"></block>
+    <block type="hx711_loadcell_read"></block>
+    <block type="hx711_loadcell_tare"></block>
+    <block type="hx711_loadcell_read_value"></block>
+    <block type="hx711_loadcell_reset"></block>
+    <block type="hx711_loadcell_calibration_offset"></block>
+    <block type="hx711_loadcell_calibration_print_offset"></block>
+    <block type="hx711_loadcell_calibration_set_offset"></block>
+    <block type="hx711_loadcell_calibration_measure_weight"></block>
+    <block type="hx711_loadcell_calibration_input_weight"></block>
+    <block type="hx711_loadcell_calibration_scale_weight"></block>
+  </category>
+</xml>

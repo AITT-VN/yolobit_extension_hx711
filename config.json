@@ -1,0 +1,14 @@
+{
+    "name": "HX711_LOADCELL",
+    "description": "Mục mở rộng hỗ trợ cảm biến khối lượng",
+    "libs": [
+        "hx711.py"
+    ],
+    "blocks": [
+        "definition.js"
+    ],
+    "toolbox": "toolbox.xml",
+    "languages": {
+    },
+    "poster": "poster.png"
+}
