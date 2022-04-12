@@ -1,2 +1,2 @@
-# yolobit_extension_hx711
-Mục mở rộng để làm việc với cảm biến cân nặng HX711
+# yolobit_loadcell
+Yolo:Bit blocks for using HX711 with Loadcell

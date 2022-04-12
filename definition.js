@@ -8,7 +8,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
       this.jsonInit(
         {
           "type": "hx711_loadcell_create",
-          "message0": 'khởi tạo cảm biến hx117 chân SCK %1 chân DATA %2',
+          "message0": 'khởi tạo cảm biến hx711 chân SCK %1 chân DATA %2',
           "args0": [
             {
               "type": "field_dropdown",
@@ -237,9 +237,9 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     // TODO: Assemble Python into code variable.
     var code = '';
     if (dropdown_type == 'KG') {
-      code = '(print("Item weighs {} grams.\n".(format(val)) / 1000))';
+      code = '"Item weighs {} grams "' + '.(format(val)) / 1000))';
     } else {
-      code = '"Item weighs {} grams".format(val)';
+      code = '"Item weighs {} grams"' + '.format(val)';
     }
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.Python.ORDER_NONE];
@@ -448,7 +448,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
       this.jsonInit(
         {
           "type": "hx711_loadcell_calibration_measure_weight",
-          "message0": 'Bắt đầu đo lường',
+          "message0": 'Canh chỉnh giá trị',
           "args0": '',
           "previousStatement": null,
           "nextStatement": null,
@@ -480,7 +480,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
       this.jsonInit(
         {
           "type": "hx711_loadcell_calibration_input_weight",
-          "message0": 'Nhập khối lượng của vật mẫu : %1',
+          "message0": 'Nhập khối lượng của vật mẫu : %1 %2',
           "args0": [
             {
               type: "input_value",
@@ -489,8 +489,12 @@ Blockly.Blocks['hx711_loadcell_create'] = {
               min: 0,
               max: ''
             },
+            {
+              type: "input_dummy"
+            },
           ],
-          "output": null,
+          previousStatement: null,
+          nextStatement: null,
           "colour": ColorBlock,
           "tooltip": '',
           "helpUrl": ''
@@ -507,8 +511,8 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_hx711_loadcell'] = 'from hx711 import *';
     var weight = Blockly.Python.valueToCode(block, 'WEIGHT', Blockly.Python.ORDER_ATOMIC);
-    var code = 'item_weight = ' + ' input("Nhập khối lượng của vật mẫu ở đơn vị grams : "' + weight +  '".\n>")\n';
-    return [code, Blockly.Python.ORDER_NONE];
+    var code = 'item_weight = ' + ' input("nhập khối lượng của vật mẫu ở đơn vị grams : ' + weight +  '")\n';
+    return code;
   };
 
 
@@ -521,7 +525,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
       this.jsonInit(
         {
           "type": "hx711_loadcell_calibration_scale_weight",
-          "message0": 'Bắt đầu đo lường',
+          "message0": 'thiết lập giá trị của cân',
           "args0": '',
           "previousStatement": null,
           "nextStatement": null,
@@ -540,5 +544,6 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     // TODO: Assemble Python into code variable.
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_hx711_loadcell'] = 'from hx711 import *';
-    var code = 'scale = int(measured_weight)/int(item_weight)\n' + 'hx711_loadcell.set_scale(scale)\n'; 
+    var code = 'scale = int(measured_weight)/int(item_weight)\n' + 'hx711_loadcell.set_scale(scale)\n';
+    return code; 
   };
