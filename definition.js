@@ -289,7 +289,8 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           "message0": 'Giá trị cảm biến khối lượng',
           "args0": '',
           "colour": ColorBlock,
-          "output": null,
+          previousStatement: null,
+          nextStatement: null,
           "tooltip": '',
           "helpUrl": ''
         }
@@ -305,7 +306,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_hx711_loadcell'] = 'from hx711 import *';
     var code = 'val = hx711_loadcell.get_grams()\n';
-    return [code, Blockly.Python.ORDER_NONE];;
+    return code;
   };
 
 
@@ -402,7 +403,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     // TODO: Assemble Python into code variable.
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_hx711_loadcell'] = 'from hx711 import *';
-    var code = '"Giá trị cảm biến ở 0 grams: {}"' + '.format(offset)\n';
+    var code = '"Giá trị cảm biến ở 0 grams: {}"' + '.format(offset)';
     return [code, Blockly.Python.ORDER_NONE];
   };
 
@@ -484,7 +485,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           "args0": [
             {
               type: "input_value",
-              name: "WEIGHT",
+              name: "NUM",
               check: "Number",
               min: 0,
               max: ''
@@ -510,11 +511,10 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     // TODO: Assemble Python into code variable.
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_hx711_loadcell'] = 'from hx711 import *';
-    var weight = Blockly.Python.valueToCode(block, 'WEIGHT', Blockly.Python.ORDER_ATOMIC);
-    var code = 'item_weight = ' + ' input("nhập khối lượng của vật mẫu ở đơn vị grams : ' + weight +  '")\n';
+    var weight = Blockly.Python.valueToCode(block, 'NUM', Blockly.Python.ORDER_ATOMIC);
+    var code = 'item_weight = ' + weight +  '\n';
     return code;
   };
-
 
   Blockly.Blocks['hx711_loadcell_calibration_scale_weight'] = {
     /**
@@ -545,5 +545,5 @@ Blockly.Blocks['hx711_loadcell_create'] = {
     Blockly.Python.definitions_['import_yolobit'] = 'from yolobit import *';
     Blockly.Python.definitions_['import_hx711_loadcell'] = 'from hx711 import *';
     var code = 'scale = int(measured_weight)/int(item_weight)\n' + 'hx711_loadcell.set_scale(scale)\n';
-    return code; 
+    return code;
   };
