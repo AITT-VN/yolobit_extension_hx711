@@ -9,14 +9,13 @@
     <block type="hx711_loadcell_calibration_print_offset"></block>
     <block type="hx711_loadcell_calibration_set_offset"></block>
     <block type="hx711_loadcell_calibration_measure_weight"></block>
+    <block type="hx711_loadcell_calibration_scale_weight"></block>
     <block type="hx711_loadcell_calibration_input_weight">
       <value name="weight">
-        <shadow type="number">
-          <field name="NUMBER">1000</field>
+        <shadow type="math_number">
+          <field name="NUM">1000</field>
         </shadow>
       </value>
     </block>
-    <block type="hx711_loadcell_calibration_scale_weight"></block>
-   
   </category>
 </xml>
