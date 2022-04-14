@@ -5,5 +5,5 @@
     <block type="hx711_loadcell_read_value"></block>
     <block type="hx711_loadcell_power"></block>
     <block type="hx711_loadcell_calibration_scale_weight"></block>
-    </category>
+  </category>
 </xml>
