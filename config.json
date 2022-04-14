@@ -1,5 +1,5 @@
 {
-    "name": "HX711_LOADCELL",
+    "name": "HX711",
     "description": "Mục mở rộng hỗ trợ cảm biến khối lượng",
     "libs": [
         "hx711.py"
