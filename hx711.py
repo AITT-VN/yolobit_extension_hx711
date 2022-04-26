@@ -34,6 +34,7 @@ class HX711(object):
         self.d_out_pin = Pin(d_out, Pin.IN)
         self.pd_sck_pin = Pin(pd_sck, Pin.OUT, value=0)
         self.channel = channel
+        self.SCALE = 1
         self.offset = 0
 
     def __repr__(self):
@@ -156,7 +157,8 @@ class HX711(object):
         self.power_on()
 
     def tare(self):
-        self.offset = self.read()
+        #self.offset = self.read()
+        self.offset = self.read_average()
 
     def raw_value(self):
         return self.read() - self.offset

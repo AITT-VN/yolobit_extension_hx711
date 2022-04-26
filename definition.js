@@ -1,4 +1,4 @@
-const ColorBlock = "#C0C0C0";
+const HX711ColorBlock = "#33aaaa";
 Blockly.Blocks['hx711_loadcell_create'] = {
     /**
      * Block for waiting.
@@ -177,7 +177,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           ],
           "previousStatement": null,
           "nextStatement": null,
-          "colour": ColorBlock,
+          "colour": HX711ColorBlock,
           "tooltip": '',
           "helpUrl": ''
         }
@@ -212,7 +212,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           "args0": '',
           "previousStatement": null,
           "nextStatement": null,
-          "colour": ColorBlock,
+          "colour": HX711ColorBlock,
           "tooltip": '',
           "helpUrl": ''
         }
@@ -242,7 +242,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           "type": "hx711_loadcell_read_value",
           "message0": 'đọc giá trị cảm biến',
           "args0": '',
-          "colour": ColorBlock,
+          "colour": HX711ColorBlock,
           "output" : null,
           "tooltip": '',
           "helpUrl": ''
@@ -285,7 +285,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           ],
           "previousStatement": null,
           "nextStatement": null,
-          "colour": ColorBlock,
+          "colour": HX711ColorBlock,
           "tooltip": '',
           "helpUrl": ''
         }
@@ -314,7 +314,7 @@ Blockly.Blocks['hx711_loadcell_create'] = {
       this.jsonInit(
         {
           "type": "hx711_loadcell_calibration_scale_weight",
-          "message0": 'cài đặt giá trị cân chỉnh: %1',
+          "message0": 'cài đặt tỉ lệ cân chỉnh %1',
           "args0": [
             {
               type: "input_value",
@@ -327,7 +327,8 @@ Blockly.Blocks['hx711_loadcell_create'] = {
           ],
           "previousStatement": null,
           "nextStatement": null,
-          "colour": ColorBlock,
+          "inputsInline": true,
+          "colour": HX711ColorBlock,
           "tooltip": '',
           "helpUrl": ''
         }

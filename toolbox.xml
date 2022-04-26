@@ -1,9 +1,15 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category id="hx711_loadcell" name="HX711" colour="#C0C0C0" icon="dumbbell">
+  <category id="hx711_loadcell" name="HX711" colour="#33aaaa" icon="dumbbell">
     <block type="hx711_loadcell_create"></block>
     <block type="hx711_loadcell_tare"></block>
     <block type="hx711_loadcell_read_value"></block>
     <block type="hx711_loadcell_power"></block>
-    <block type="hx711_loadcell_calibration_scale_weight"></block>
+    <block type="hx711_loadcell_calibration_scale_weight">
+      <value name="SCALE">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
   </category>
 </xml>
